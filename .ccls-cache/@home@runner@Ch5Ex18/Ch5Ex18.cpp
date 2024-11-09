@@ -20,7 +20,7 @@ const double years[6] = {1900, 1920, 1940, 1960, 1980, 2000};
 
 
 void File();
-void BarChart();
+
 
 
 int main(){
@@ -33,7 +33,9 @@ void File(){
 
 fstream fileHandle;
   cout <<  "PRAIRIEVILLE POPULATION GROWTH" << endl
-     << "(each * represents 1,000 people)" <<endl;
+     << "(each * represents 1,000 people)" <<endl
+    << "Year\tPopulation" << endl;
+
 
   fileHandle.open("People.txt");
 
@@ -45,8 +47,8 @@ fstream fileHandle;
   for (int a = 0; a < 6; ++a) {
     fileHandle >> populationString;
     double population = stod(populationString);
-    cout << years[a] << "\t"
-         << "\t\t";
+    cout << years[a] << "\t";
+        
    
     for (int b = 0; b < population / 1000; ++b) {
         cout << "*";
