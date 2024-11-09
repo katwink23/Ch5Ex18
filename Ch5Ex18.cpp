@@ -16,7 +16,7 @@ using namespace std;
 string populationString;
 
 const double years[6] = {1900, 1920, 1940, 1960, 1980, 2000};
-int n = sizeof(years) / sizeof(years[0]);
+
 
 
 void File();
@@ -42,13 +42,13 @@ fstream fileHandle;
   abort();
   }
  
-  for (int i = 0; i < 6; ++i) {
+  for (int a = 0; a < 6; ++a) {
     fileHandle >> populationString;
     double population = stod(populationString);
-    cout << years[i] << "\t"
+    cout << years[a] << "\t"
          << "\t\t";
    
-    for (int j = 0; j < population / 1000; ++j) {
+    for (int b = 0; b < population / 1000; ++b) {
         cout << "*";
     }
     cout << endl; 
